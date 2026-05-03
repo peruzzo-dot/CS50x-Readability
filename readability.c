@@ -1,46 +1,46 @@
-#include <cs50.h>
 #include <ctype.h>
-#include <math.h>
+#include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 int main(void)
 {
-    // 1. Pedir o texto ao usuário
-    string text = get_string("Text: ");
+    // 1. Solicitar o texto ao usuário
+    string texto = get_string("Text: ");
 
-    // 2. Contar letras, palavras e frases
-    int letters = 0;
-    int words = 1; // Começamos com 1 porque a última palavra não tem espaço depois
-    int sentences = 0;
+    // 2. Inicializar contadores
+    int letras = 0;
+    int palavras = 1;
+    int frases = 0;
 
-    // 3. O Loop para analisar o texto
-    for (int i = 0, n = strlen(text); i < n; i++)
+    // 3. Loop para analisar o texto
+    for (int i = 0, n = strlen(texto); i < n; i++)
     {
-        // Conta letras: verifica se o caractere atual é alfabético
-        if (isalpha(text[i]))
+        // Conta letras
+        if (isalpha(texto[i]))
         {
-            letters++;
+            letras++;
         }
-        // Conta palavras: assume que uma nova palavra começa após um espaço
-        else if (text[i] == ' ')
+        // Conta palavras
+        else if (isspace(texto[i]))
         {
-            words++;
+            palavras++;
         }
-        // Conta frases: verifica pontos finais, exclamação ou interrogação
-        else if (text[i] == '.' || text[i] == '!' || text[i] == '?')
+        // Conta frases
+        else if (texto[i] == '.' || texto[i] == '!' || texto[i] == '?')
         {
-            sentences++;
+            frases++;
         }
     }
-    // L = média de letras por 100 palavras
-    float L = (float) letters / words * 100;
-    // S é a média de frases por 100 palavras
-    float S = (float) sentences / words * 100;
 
+    // 4. Calcular o índice (Coleman-Liau)
+    float L = (float) letras / palavras * 100;
+    float S = (float) frases / palavras * 100;
     float index = 0.0588 * L - 0.296 * S - 15.8;
     int grade = round(index);
 
+    // 5. Imprimir o resultado
     if (grade < 1)
     {
         printf("Before Grade 1\n");
@@ -54,6 +54,3 @@ int main(void)
         printf("Grade %i\n", grade);
     }
 }
-// 4. Calcular o índece (Coleman-Liau)
-
-// 5. Imprimir o resultado (Grade x)
