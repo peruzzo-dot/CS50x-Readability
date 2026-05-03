@@ -1,15 +1,31 @@
-# Readability - CS50
+# CS50x - Algoritmos e Lógica de Programação
 
-Este projeto foi desenvolvido como parte do curso **CS50 Introduction to Computer Science da Harvard University**.
+Este repositório contém as soluções desenvolvidas por mim durante o curso **CS50: Introduction to Computer Science da Harvard University**. O foco principal aqui é o domínio da linguagem C e fundamentos de algoritmos.
 
-### 📝 Descrição
-O programa calcula o índice de legibilidade de um texto utilizando a fórmula de **Coleman-Liau**. Ele analisa a quantidade de letras, palavras e frases para determinar o nível escolar necessário para compreender o conteúdo.
+## 🚀 Tecnologias e Ferramentas
+*   **Linguagem:** C
+*   **Ferramentas:** VS Code, CLI (Terminal), Check50, Style50
 
-### 🛠️ Tecnologias Utilizadas
-- Linguagem C
-- Biblioteca CS50 (`cs50.h`)
-- Lógica de manipulação de strings e arredondamento matemático.
+## 📂 Projetos Implementados
 
-### 🚀 Como funciona
-A fórmula aplicada é: $0.0588 * L - 0.296 * S - 15.8$
-Onde **L** é a média de letras por 100 palavras e **S** é a média de frases por 100 palavras.
+### 🔐 Criptografia
+*   **Substitution:** Um programa que recebe uma chave de 26 caracteres e criptografa mensagens através da substituição de letras, preservando maiúsculas e minúsculas.
+*   **Caesar:** Implementação da Cifra de César, que criptografa textos rotacionando os caracteres por um valor numérico fornecido via linha de comando.
+
+### 📊 Análise de Texto
+*   **Readability:** Algoritmo que calcula o índice de legibilidade de Coleman-Liau para determinar o nível escolar apropriado de um texto.
+
+## 🛠️ Como Executar
+Para compilar e rodar qualquer um dos programas, utilize o terminal:
+
+1.  Compilar:
+    ```bash
+    make nome_do_arquivo
+    ```
+2.  Executar:
+    ```bash
+    ./nome_do_arquivo
+    ```
+
+---
+💡 *Estudante de Ciência da Computação (FADERGS) com foco em Desenvolvimento Web Full Stack.*
